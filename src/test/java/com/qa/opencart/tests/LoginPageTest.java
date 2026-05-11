@@ -4,20 +4,21 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
+import static com.qa.opencart.constant.AppConstant.*;// Static Import:To remove Writing AppConstant. each time
 
 public class LoginPageTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		String actTitle = loginPage.getLoginPageTitle();
-		Assert.assertEquals(actTitle, "Account Login");
-
+		// Assert.assertEquals(actTitle, "Account Login");
+		Assert.assertEquals(actTitle, LOGIN_PAGE_TITLE_VALUE);
 	}
 
 	@Test(priority = 2)
 	public void loginPageUrlTest() {
 		String actUrl = loginPage.getLoginUrl();
-		Assert.assertTrue(actUrl.contains("route=account/login"));
+		Assert.assertTrue(actUrl.contains(LOGIN_PAGE_URL_FRACTION_VALUE));
 
 	}
 
@@ -27,9 +28,10 @@ public class LoginPageTest extends BaseTest {
 	}
 
 	@Test(priority = Short.MAX_VALUE)
-	public void loginTest() throws InterruptedException {
-		String actAccpageTitle = loginPage.doLogin("nov11@gmail.com", "1234");
-		Assert.assertEquals(actAccpageTitle, "My Account");
+	public void loginTest() {
+		// String actAccpageTitle = loginPage.doLogin("feb02@gmail.com", "1234");
+		accountsPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+		Assert.assertEquals(accountsPage.getAccPageTitle(), ACCOUNTS_PAGE_TITLE_VALUE);
 
 	}
 }
