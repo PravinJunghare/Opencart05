@@ -11,6 +11,7 @@ import com.qa.opencart.factory.Driverfactory;
 import com.qa.opencart.pages.AccountsPage;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductInfoPage;
+import com.qa.opencart.pages.RegistrationPage;
 //import com.qa.opencart.pages.RegisterPage;
 import com.qa.opencart.pages.SearchResultPage;
 
@@ -27,7 +28,7 @@ public class BaseTest {
 	protected SearchResultPage searchPage;
 	protected ProductInfoPage productInfoPage;
 	protected SoftAssert softAssert;
-	// protected RegistrationPage registrationPage;
+   protected RegistrationPage registrationPage;
 
 	@BeforeTest
 	public void setUp() {

@@ -8,6 +8,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.constant.AppConstant;
+//import com.qa.opencart.utils.CSVUtil;
+import com.qa.opencart.utils.ExcelUtil;
 
 public class ProductInfoPageTest extends BaseTest {
 
@@ -25,6 +28,7 @@ public class ProductInfoPageTest extends BaseTest {
 		Assert.assertEquals(actualHeader, "MacBook Pro");
 	}
 
+// Test case Using DataProvider
 	@DataProvider
 	public Object[][] getProductImagesTestData() {
 		return new Object[][] { { "MacBook", "MacBook Pro", 4 }, { "MacBook", "MacBook Air", 4 }, { "iMac", "iMac", 3 },
@@ -40,6 +44,38 @@ public class ProductInfoPageTest extends BaseTest {
 		int actualImagecount = productInfoPage.getImageCount();
 		Assert.assertEquals(actualImagecount, imagecount);
 	}
+
+	// Test case Using Excel using Data Provider
+	@DataProvider
+	public Object[][] getProductexcelImagesTestData() {
+		return ExcelUtil.getTestData(AppConstant.PRODUCT_SHEET_NAME);
+	};
+
+	@Test(dataProvider = "getProductexcelImagesTestData")
+	public void producteExcelImagecountTest(String searchkey, String productname, String imagecount) {
+		searchPage = accountsPage.doSearch(searchkey);
+		productInfoPage = searchPage.selectProduct(productname);
+		int actualImagecount = productInfoPage.getImageCount();
+		Assert.assertEquals(String.valueOf(actualImagecount), imagecount);
+	}
+	
+	
+
+	// Test case Using CSV file using Data Provider
+/*	@DataProvider
+	public Object[][] getProductCSVImagesTestData() {
+		return CSVUtil.csvData("product");
+	};
+
+	@Test(dataProvider = "getProductCSVImagesTestData")
+	public void producteCSVImagecountTest(String searchkey, String productname, String imagecount) {
+		searchPage = accountsPage.doSearch(searchkey);
+		productInfoPage = searchPage.selectProduct(productname);
+		int actualImagecount = productInfoPage.getImageCount();
+		//Assert.assertEquals(actualImagecount, imagecount);
+		Assert.assertEquals(String.valueOf(actualImagecount), (imagecount));
+	} */
+	
 
 	@Test
 	public void productInfoTest() {

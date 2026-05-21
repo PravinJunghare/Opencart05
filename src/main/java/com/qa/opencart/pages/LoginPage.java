@@ -65,5 +65,13 @@ public class LoginPage {
 		return new AccountsPage(driver);
 
 	}
+	
+	public RegistrationPage navigateToRegistrationPage() {
+		{
+			//eleUtil.doClick(registerlink);
+			eleUtil.clickWhenReady(DEFAULT_MEDIUM_TIMEOUT, registerlink);
+			return new RegistrationPage(driver);
+		}
+	}
 
 }

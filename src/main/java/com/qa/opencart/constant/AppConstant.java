@@ -17,12 +17,15 @@ public class AppConstant {
 	public static final String ACCOUNTS_PAGE_TITLE_VALUE = "My Account";
 	public static final String ACCOUNTS_PAGE_URL_FRACTION_VALUE = "route=account/account";
 	public static final int ACCOUNTS_PAGE_HEADERCOUNT = 4;
-	
-	public static final List<String> EXPECTED_ACCOUNTPAGE_HEADERS_LIST = Arrays.asList("My Account", "My Orders",
-			"My Affiliate Account", "Newsletter");
 	public static final String USER_REG_SUCCESS_MSG = "Your Account Has Been Created";
+	
+	
+	//*****HEADER LIST*********
+	//public static final List<String> EXPECTED_ACCOUNTPAGE_HEADERS_LIST = Arrays.asList("My Account", "My Orders","My Affiliate Account", "Newsletter");
+	public static final List<String> EXPECTED_ACCOUNTPAGE_HEADERS_LIST = List.of("My Account", "My Orders","My Affiliate Account", "Newsletter");
 	
 	
 	//*************SHEET NAMES**************************
 	public static final String REGISTER_SHEET_NAME = "register";
+	public static final String PRODUCT_SHEET_NAME = "product";
 }

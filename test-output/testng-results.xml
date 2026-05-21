@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-20T11:29:21 IST" name="Default suite" finished-at="2026-05-20T11:29:41 IST" duration-ms="19751">
+  <suite started-at="2026-05-21T14:11:26 IST" name="Default suite" finished-at="2026-05-21T14:11:48 IST" duration-ms="22176">
     <groups>
     </groups>
-    <test started-at="2026-05-20T11:29:21 IST" name="Default test" finished-at="2026-05-20T11:29:41 IST" duration-ms="19751">
+    <test started-at="2026-05-21T14:11:26 IST" name="Default test" finished-at="2026-05-21T14:11:48 IST" duration-ms="22176">
       <class name="com.qa.opencart.tests.ProductInfoPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:21 IST" name="setUp" finished-at="2026-05-20T11:29:31 IST" duration-ms="9470" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:26 IST" name="setUp" finished-at="2026-05-21T14:11:31 IST" duration-ms="5439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="producInfoPageSetup()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:31 IST" name="producInfoPageSetup" finished-at="2026-05-20T11:29:31 IST" duration-ms="246" status="PASS">
+        <test-method is-config="true" signature="producInfoPageSetup()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:31 IST" name="producInfoPageSetup" finished-at="2026-05-21T14:11:32 IST" duration-ms="277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- producInfoPageSetup -->
-        <test-method signature="productHeaderTest()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:31 IST" name="productHeaderTest" finished-at="2026-05-20T11:29:34 IST" duration-ms="2982" status="PASS">
+        <test-method signature="productHeaderTest()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:32 IST" name="productHeaderTest" finished-at="2026-05-21T14:11:35 IST" duration-ms="3032" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productHeaderTest -->
-        <test-method signature="productImagecountTest(java.lang.String,java.lang.String,int)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:34 IST" name="productImagecountTest" data-provider="getProductImagesTestData" finished-at="2026-05-20T11:29:35 IST" duration-ms="1161" status="PASS">
+        <test-method signature="productImagecountTest(java.lang.String,java.lang.String,int)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:35 IST" name="productImagecountTest" data-provider="getProductImagesTestData" finished-at="2026-05-21T14:11:36 IST" duration-ms="1528" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -40,7 +40,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productImagecountTest -->
-        <test-method signature="productImagecountTest(java.lang.String,java.lang.String,int)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:35 IST" name="productImagecountTest" data-provider="getProductImagesTestData" finished-at="2026-05-20T11:29:36 IST" duration-ms="1310" status="PASS">
+        <test-method signature="productImagecountTest(java.lang.String,java.lang.String,int)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:36 IST" name="productImagecountTest" data-provider="getProductImagesTestData" finished-at="2026-05-21T14:11:38 IST" duration-ms="1549" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -61,7 +61,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productImagecountTest -->
-        <test-method signature="productImagecountTest(java.lang.String,java.lang.String,int)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:36 IST" name="productImagecountTest" data-provider="getProductImagesTestData" finished-at="2026-05-20T11:29:38 IST" duration-ms="1427" status="PASS">
+        <test-method signature="productImagecountTest(java.lang.String,java.lang.String,int)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:38 IST" name="productImagecountTest" data-provider="getProductImagesTestData" finished-at="2026-05-21T14:11:40 IST" duration-ms="1896" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -82,7 +82,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productImagecountTest -->
-        <test-method signature="productImagecountTest(java.lang.String,java.lang.String,int)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:38 IST" name="productImagecountTest" data-provider="getProductImagesTestData" finished-at="2026-05-20T11:29:39 IST" duration-ms="1510" status="PASS">
+        <test-method signature="productImagecountTest(java.lang.String,java.lang.String,int)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:40 IST" name="productImagecountTest" data-provider="getProductImagesTestData" finished-at="2026-05-21T14:11:42 IST" duration-ms="1964" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -103,11 +103,74 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productImagecountTest -->
-        <test-method signature="productInfoTest()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:39 IST" name="productInfoTest" finished-at="2026-05-20T11:29:41 IST" duration-ms="1260" status="PASS">
+        <test-method signature="productInfoTest()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:42 IST" name="productInfoTest" finished-at="2026-05-21T14:11:43 IST" duration-ms="1516" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productInfoTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@3224a577]" started-at="2026-05-20T11:29:41 IST" name="teardown" finished-at="2026-05-20T11:29:41 IST" duration-ms="167" status="PASS">
+        <test-method signature="producteExcelImagecountTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:44 IST" name="producteExcelImagecountTest" data-provider="getProductexcelImagesTestData" finished-at="2026-05-21T14:11:45 IST" duration-ms="1187" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MacBook]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MacBook Pro]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- producteExcelImagecountTest -->
+        <test-method signature="producteExcelImagecountTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:45 IST" name="producteExcelImagecountTest" data-provider="getProductexcelImagesTestData" finished-at="2026-05-21T14:11:46 IST" duration-ms="1232" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MacBook]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MacBook Air]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- producteExcelImagecountTest -->
+        <test-method signature="producteExcelImagecountTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:46 IST" name="producteExcelImagecountTest" data-provider="getProductexcelImagesTestData" finished-at="2026-05-21T14:11:48 IST" duration-ms="1477" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MacBook]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MacBook]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- producteExcelImagecountTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.qa.opencart.tests.ProductInfoPageTest@748741cb]" started-at="2026-05-21T14:11:48 IST" name="teardown" finished-at="2026-05-21T14:11:48 IST" duration-ms="153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
