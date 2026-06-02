@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constant.AppConstant;
-//import com.qa.opencart.utils.CSVUtil;
+import com.qa.opencart.utils.CSVUtil;
 import com.qa.opencart.utils.ExcelUtil;
 
 public class ProductInfoPageTest extends BaseTest {
@@ -62,7 +62,7 @@ public class ProductInfoPageTest extends BaseTest {
 	
 
 	// Test case Using CSV file using Data Provider
-/*	@DataProvider
+	@DataProvider
 	public Object[][] getProductCSVImagesTestData() {
 		return CSVUtil.csvData("product");
 	};
@@ -74,8 +74,7 @@ public class ProductInfoPageTest extends BaseTest {
 		int actualImagecount = productInfoPage.getImageCount();
 		//Assert.assertEquals(actualImagecount, imagecount);
 		Assert.assertEquals(String.valueOf(actualImagecount), (imagecount));
-	} */
-	
+	}
 
 	@Test
 	public void productInfoTest() {
