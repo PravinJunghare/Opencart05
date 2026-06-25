@@ -1,4 +1,5 @@
 package com.qa.opencart.factory;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -14,7 +15,9 @@ import com.qa.opencart.exception.BrowserException;
 public class Driverfactory {
 
 	public WebDriver driver;
-	Properties prop;
+	public Properties prop;
+	OptionsManager optionsManger;
+	public static String isHighlight;
 
 	/**
 	 * this method is initializing the driver on the basis of browser name
@@ -25,16 +28,24 @@ public class Driverfactory {
 	// public WebDriver initDriver(String browserName)
 	public WebDriver initDriver(Properties prop) {
 		String browserName = prop.getProperty("browser");
+		optionsManger = new OptionsManager(prop);
+		isHighlight = prop.getProperty("highlight");
 		switch (browserName.toLowerCase().trim()) {
 		case "chrome":
-			driver = new ChromeDriver();
+			// driver = new ChromeDriver()
+			driver = new ChromeDriver(optionsManger.getChromeOptions());
 			break;
+
 		case "firefox":
-			driver = new FirefoxDriver();
+			// driver = new FirefoxDriver();
+			driver = new FirefoxDriver(optionsManger.getFirefoxOptions());
 			break;
+
 		case "edge":
-			driver = new EdgeDriver();
+			// driver = new EdgeDriver();
+			driver = new EdgeDriver(optionsManger.getEdgeOptions());
 			break;
+
 		case "safari":
 			driver = new SafariDriver();
 			break;

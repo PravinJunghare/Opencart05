@@ -64,7 +64,7 @@ public class ProductInfoPageTest extends BaseTest {
 	// Test case Using CSV file using Data Provider
 	@DataProvider
 	public Object[][] getProductCSVImagesTestData() {
-		return CSVUtil.csvData("product");
+		return CSVUtil.csvData(AppConstant.PRODUCT_CSV_NAME);
 	};
 
 	@Test(dataProvider = "getProductCSVImagesTestData")

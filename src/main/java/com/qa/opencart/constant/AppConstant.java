@@ -28,4 +28,6 @@ public class AppConstant {
 	//*************SHEET NAMES**************************
 	public static final String REGISTER_SHEET_NAME = "register";
 	public static final String PRODUCT_SHEET_NAME = "product";
+	public static final String PRODUCT_CSV_NAME = "product";
+	
 }
