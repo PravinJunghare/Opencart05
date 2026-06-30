@@ -1,6 +1,7 @@
 package com.qa.opencart.factory;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -11,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import com.qa.opencart.exception.BrowserException;
+import com.qa.opencart.exception.FrameworkException;
 
 public class Driverfactory {
 
@@ -28,8 +30,14 @@ public class Driverfactory {
 	// public WebDriver initDriver(String browserName)
 	public WebDriver initDriver(Properties prop) {
 		String browserName = prop.getProperty("browser");
+		
 		optionsManger = new OptionsManager(prop);
 		isHighlight = prop.getProperty("highlight");
+		
+		if (browserName == null) {
+		    throw new RuntimeException("Browser value is missing in properties file");
+		}
+
 		switch (browserName.toLowerCase().trim()) {
 		case "chrome":
 			// driver = new ChromeDriver()
@@ -37,8 +45,8 @@ public class Driverfactory {
 			break;
 
 		case "firefox":
-			// driver = new FirefoxDriver();
-			driver = new FirefoxDriver(optionsManger.getFirefoxOptions());
+			driver = new FirefoxDriver();
+			//driver = new FirefoxDriver(optionsManger.getFirefoxOptions());
 			break;
 
 		case "edge":
@@ -69,16 +77,48 @@ public class Driverfactory {
 	 * 
 	 * @return
 	 */
+	// mvn clean install -Denv="Qa"
+	public Properties initProp()
 
-	public Properties initProp() {
-		prop = new Properties();
+	{
+
+		String envName = System.getProperty("env");
+		FileInputStream ip = null;
+		prop=new Properties();
 		try {
-			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
+			if (envName == null) {
+				System.out.println("env is null ,hence running on QA env");
+				ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
+
+			} else {
+				System.out.println("Running test cases on environment  :" + envName);
+				switch (envName.toLowerCase().trim()) {
+				case "qa":
+					ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
+					break;
+				case "dev":
+					ip = new FileInputStream("./src/test/resources/config/dev.config.properties");
+					break;
+
+				case "uat":
+					ip = new FileInputStream("./src/test/resources/config/uat.config.properties");
+					break;
+
+				default:
+					throw new FrameworkException("==INVALID ENVIRONMENT NAME== :"+envName);
+				}
+
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+
+		}
+		try {
 			prop.load(ip);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		return prop;
 	}
 

@@ -3,7 +3,7 @@
   <groupId>OpenCart05</groupId>
   <artifactId>OpenCart05</artifactId>
 <version>0.0.1-SNAPSHOT</version>
-  <!--Version Varibles -->
+   <!--Version Varibles -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>11</maven.compiler.source>
@@ -138,7 +138,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>
-							src\test\resources\testRunners\sanity.xml</suiteXmlFile>
+							src\test\resources\testRunner\chrome_sanity.xml</suiteXmlFile>
 						<!--for running multiple testng.xml files in jenkins pipeline use above 
 							line -->
 						<!--<suiteXmlFile>src\test\resources\testrunners\chrome_sanity.xml</suiteXmlFile> -->
