@@ -4,9 +4,14 @@
 <suite name="Opencart App Test Regression Suite" thread-count="4"
 	parallel="tests" verbose="4">
 
-
-
-
+	<listeners>
+		<listener
+			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
+	</listeners>
+	
+	
+	
+	
 	<test name="Login Page Test_firefox">
 	<parameter name="browser" value="firefox" />
 

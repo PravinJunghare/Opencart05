@@ -1,75 +1,84 @@
 package com.qa.opencart.factory;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencart.exception.BrowserException;
 import com.qa.opencart.exception.FrameworkException;
 
 public class Driverfactory {
-
 	public WebDriver driver;
 	public Properties prop;
-	OptionsManager optionsManger;
+	OptionsManager optionManger;
 	public static String isHighlight;
+	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 
 	/**
-	 * this method is initializing the driver on the basis of browser name
+	 * this method is initializing the browser on the basis of browser name
 	 * 
 	 * @param browserName
 	 * @return this returns the driver
 	 */
 	// public WebDriver initDriver(String browserName)
+
 	public WebDriver initDriver(Properties prop) {
-		String browserName = prop.getProperty("browser");
-		
-		optionsManger = new OptionsManager(prop);
+		ChainTestListener.log("Properties used :" + prop.toString());
+
+		String browserName = prop.getProperty("browser").trim();
+		System.out.println("browsername is :" + browserName);
+		optionManger = new OptionsManager(prop);
 		isHighlight = prop.getProperty("highlight");
-		
-		if (browserName == null) {
-		    throw new RuntimeException("Browser value is missing in properties file");
-		}
 
-		switch (browserName.toLowerCase().trim()) {
-		case "chrome":
-			// driver = new ChromeDriver()
-			driver = new ChromeDriver(optionsManger.getChromeOptions());
-			break;
+		if (browserName.equalsIgnoreCase("chrome")) {
+			// driver = new ChromeDrive()
 
-		case "firefox":
-			driver = new FirefoxDriver();
-			//driver = new FirefoxDriver(optionsManger.getFirefoxOptions());
-			break;
+			// ThradLocal Concept is used as require static driver in screenshot method so
+			// we created Threadlocal variable
+			tlDriver.set(new ChromeDriver(optionManger.getChromeOptions()));
 
-		case "edge":
-			// driver = new EdgeDriver();
-			driver = new EdgeDriver(optionsManger.getEdgeOptions());
-			break;
-
-		case "safari":
-			driver = new SafariDriver();
-			break;
-
-		default:
+			// driver = new ChromeDriver(optionManger.getChromeOptions());
+		} else if (browserName.trim().equalsIgnoreCase("firefox")) {
+			tlDriver.set(new FirefoxDriver(optionManger.getFirefoxOptions()));
+			// driver = new FirefoxDriver(optionManger.getFirefoxOptions());
+		} else if (browserName.trim().equalsIgnoreCase("edge")) {
+			tlDriver.set(new EdgeDriver(optionManger.getEdgeOptions()));
+			// driver = new EdgeDriver(optionManger.getEdgeOptions());
+		} else {
 			System.out.println("Please enter the correct browserName" + browserName);
 			throw new BrowserException("===Invalid Browser=====" + browserName);
 		}
 
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
+		// .manage().deleteAllCookies();
+		// driver.manage().window().maximize();
 		// driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
-		driver.get(prop.getProperty("url"));
+		// ******Replaced driver with get driver
+		getDriver().get(prop.getProperty("url"));
+		getDriver().manage().deleteAllCookies();
+		getDriver().manage().window().maximize();
 
-		return driver;
+		getDriver().get(prop.getProperty("url"));
 
+		return getDriver();
+
+	}
+
+	/**
+	 * getDriver: get the local thready copy of the driver
+	 */
+
+	public static WebDriver getDriver() {
+		return tlDriver.get();
 	}
 
 	/**
@@ -84,10 +93,10 @@ public class Driverfactory {
 
 		String envName = System.getProperty("env");
 		FileInputStream ip = null;
-		prop=new Properties();
+		prop = new Properties();
 		try {
 			if (envName == null) {
-				System.out.println("env is null ,hence running on QA env");
+				System.err.println("env is null ,hence running on QA env");
 				ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
 
 			} else {
@@ -105,7 +114,7 @@ public class Driverfactory {
 					break;
 
 				default:
-					throw new FrameworkException("==INVALID ENVIRONMENT NAME== :"+envName);
+					throw new FrameworkException("==INVALID ENVIRONMENT NAME :" + envName);
 				}
 
 			}
@@ -120,6 +129,25 @@ public class Driverfactory {
 		}
 
 		return prop;
+	}
+
+	/**
+	 * takescreenshot
+	 */
+
+	public static File getScreenshotFile() {
+		File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);// temp dir
+		return srcFile;
+	}
+
+	public static byte[] getScreenshotByte() {
+		return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);// temp dir
+
+	}
+
+	public static String getScreenshotBase64() {
+		return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BASE64);// temp dir
+
 	}
 
 }
