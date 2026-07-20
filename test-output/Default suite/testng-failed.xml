@@ -5,9 +5,10 @@
     <classes>
       <class name="com.qa.opencart.tests.LoginPageTest">
         <methods>
-          <include name="loginPageTitleTest"/>
           <include name="loginTest"/>
+          <include name="loginPageTitleTest"/>
           <include name="setUp"/>
+          <include name="attachScreenshot"/>
           <include name="teardown"/>
           <include name="forgotpassLinkExistTest"/>
           <include name="loginPageUrlTest"/>

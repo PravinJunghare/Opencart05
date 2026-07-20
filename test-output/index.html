@@ -182,13 +182,13 @@
 Build info: version: &apos;4.28.0&apos;, revision: &apos;ac342546e9&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.54, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64469}, goog:processID: 2800, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64469/devtoo..., se:cdpVersion: 149.0.7827.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ac24b357d2142304a11556fc22a160e7
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.54, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52558}, goog:processID: 16020, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52558/devtoo..., se:cdpVersion: 149.0.7827.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 00345eb79d710a37f23e03b5ed0a581b
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.qa.opencart.utils.ElementUtil.waitForTitleContainsAndFetch(ElementUtil.java:259)
-	at com.qa.opencart.pages.LoginPage.getLoginPageTitle(LoginPage.java:34)
-	at com.qa.opencart.tests.LoginPageTest.loginPageTitleTest(LoginPageTest.java:14)
+	at com.qa.opencart.pages.LoginPage.getLoginPageTitle(LoginPage.java:37)
+	at com.qa.opencart.tests.LoginPageTest.loginPageTitleTest(LoginPageTest.java:31)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -299,6 +299,7 @@ Session ID: ac24b357d2142304a11556fc22a160e7
 &lt;suite thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;Opencart App Test Regression Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;4&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.aventstack.chaintest.plugins.ChainTestListener&quot;/&gt;
+    &lt;listener class-name=&quot;com.qa.opencart.listener.TestAllureListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;Login Page Test_chrome&quot; verbose=&quot;4&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
@@ -354,46 +355,46 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginPageTitleTest')
+data.setCell(0, 1, 'loginTest')
 data.setCell(0, 2, 'com.qa.opencart.tests.LoginPageTest')
-data.setCell(0, 3, 5477);
+data.setCell(0, 3, 6482);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginTest')
+data.setCell(1, 1, 'loginPageTitleTest')
 data.setCell(1, 2, 'com.qa.opencart.tests.LoginPageTest')
-data.setCell(1, 3, 3881);
+data.setCell(1, 3, 5272);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'forgotpassLinkExistTest')
-data.setCell(2, 2, 'com.qa.opencart.tests.LoginPageTest')
-data.setCell(2, 3, 973);
+data.setCell(2, 1, 'accountHeaderCountTest')
+data.setCell(2, 2, 'com.qa.opencart.tests.AccountsPageTest')
+data.setCell(2, 3, 909);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'accountHeaderCountTest')
-data.setCell(3, 2, 'com.qa.opencart.tests.AccountsPageTest')
-data.setCell(3, 3, 434);
+data.setCell(3, 1, 'forgotpassLinkExistTest')
+data.setCell(3, 2, 'com.qa.opencart.tests.LoginPageTest')
+data.setCell(3, 3, 775);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'accountHeaderValueTest')
 data.setCell(4, 2, 'com.qa.opencart.tests.AccountsPageTest')
-data.setCell(4, 3, 392);
+data.setCell(4, 3, 145);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'isLogoutLinkExistTest')
 data.setCell(5, 2, 'com.qa.opencart.tests.AccountsPageTest')
-data.setCell(5, 3, 104);
+data.setCell(5, 3, 79);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'accountsPageTitleTest')
-data.setCell(6, 2, 'com.qa.opencart.tests.AccountsPageTest')
-data.setCell(6, 3, 73);
+data.setCell(6, 1, 'loginPageUrlTest')
+data.setCell(6, 2, 'com.qa.opencart.tests.LoginPageTest')
+data.setCell(6, 3, 24);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'accountsPageUrlTest')
+data.setCell(7, 1, 'accountsPageTitleTest')
 data.setCell(7, 2, 'com.qa.opencart.tests.AccountsPageTest')
-data.setCell(7, 3, 54);
+data.setCell(7, 3, 23);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'loginPageUrlTest')
-data.setCell(8, 2, 'com.qa.opencart.tests.LoginPageTest')
-data.setCell(8, 3, 36);
+data.setCell(8, 1, 'accountsPageUrlTest')
+data.setCell(8, 2, 'com.qa.opencart.tests.AccountsPageTest')
+data.setCell(8, 3, 18);
 window.suiteTableData['Opencart_App_Test_Regression_Suite']= { tableData: data, tableDiv: 'times-div-Opencart_App_Test_Regression_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 21 seconds</span>
+              <span class="suite-total-time">Total running time: 43 seconds</span>
               <div id="times-div-Opencart_App_Test_Regression_Suite">
               </div> <!-- times-div-Opencart_App_Test_Regression_Suite -->
             </div> <!-- times-div -->
@@ -433,7 +434,7 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">accPageSetup</span>
-                <span class="method-start">10424 ms</span>
+                <span class="method-start">30162 ms</span>
               </div> <!-- configuration-class before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
@@ -442,89 +443,89 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">loginPageTitleTest</span>
-                <span class="method-start">10610 ms</span>
+                <span class="method-start">30836 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.qa.opencart.tests.AccountsPageTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">accountHeaderCountTest</span>
-                <span class="method-start">13996 ms</span>
+                <span class="method-start">32269 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=accountHeaderCountTest status=SUCCESS method=AccountsPageTest.accountHeaderCountTes...)</span>
-                <span class="method-start">14815 ms</span>
+                <span class="method-start">33339 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">accountHeaderValueTest</span>
-                <span class="method-start">14910 ms</span>
+                <span class="method-start">33364 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=accountHeaderValueTest status=SUCCESS method=AccountsPageTest.accountHeaderValueTes...)</span>
-                <span class="method-start">15308 ms</span>
+                <span class="method-start">33515 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">accountsPageTitleTest</span>
-                <span class="method-start">15323 ms</span>
+                <span class="method-start">33519 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">accountsPageUrlTest</span>
+                <span class="method-start">33544 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=accountsPageTitleTest status=SUCCESS method=AccountsPageTest.accountsPageTitleTest(...)</span>
-                <span class="method-start">15438 ms</span>
+                <span class="method-start">33544 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">accountsPageUrlTest</span>
-                <span class="method-start">15454 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=accountsPageUrlTest status=SUCCESS method=AccountsPageTest.accountsPageUrlTest()[pr...)</span>
-                <span class="method-start">15515 ms</span>
+                <span class="method-start">33577 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">isLogoutLinkExistTest</span>
-                <span class="method-start">15520 ms</span>
+                <span class="method-start">33583 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=isLogoutLinkExistTest status=SUCCESS method=AccountsPageTest.isLogoutLinkExistTest(...)</span>
-                <span class="method-start">15634 ms</span>
+                <span class="method-start">33662 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">15648 ms</span>
+                <span class="method-start">33672 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.qa.opencart.tests.LoginPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=loginPageTitleTest status=FAILURE method=LoginPageTest.loginPageTitleTest()[pri:1, ...)</span>
-                <span class="method-start">16110 ms</span>
+                <span class="method-start">36227 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">loginPageUrlTest</span>
-                <span class="method-start">16377 ms</span>
+                <span class="method-start">36329 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=loginPageUrlTest status=SUCCESS method=LoginPageTest.loginPageUrlTest()[pri:2, inst...)</span>
-                <span class="method-start">16420 ms</span>
+                <span class="method-start">36355 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">forgotpassLinkExistTest</span>
-                <span class="method-start">16427 ms</span>
+                <span class="method-start">36359 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=forgotpassLinkExistTest status=SUCCESS method=LoginPageTest.forgotpassLinkExistTest...)</span>
-                <span class="method-start">17408 ms</span>
+                <span class="method-start">37139 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">17421 ms</span>
+                <span class="method-start">37144 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">attachScreenshot([TestResult name=loginTest status=SUCCESS method=LoginPageTest.loginTest()[pri:32767, instance:com.q...)</span>
-                <span class="method-start">21310 ms</span>
+                <span class="method-start">43631 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">21315 ms</span>
+                <span class="method-start">43634 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

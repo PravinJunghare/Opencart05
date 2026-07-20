@@ -3,6 +3,7 @@
 <suite thread-count="4" parallel="tests" name="Failed suite [Opencart App Test Regression Suite]" guice-stage="DEVELOPMENT" verbose="4">
   <listeners>
     <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"/>
+    <listener class-name="com.qa.opencart.listener.TestAllureListener"/>
   </listeners>
   <test thread-count="4" parallel="tests" name="Login Page Test_chrome(failed)" verbose="4">
     <parameter name="browser" value="chrome"/>
